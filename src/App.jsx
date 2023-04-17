@@ -8,12 +8,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect((() => {
-    // const timer = setTimeout(() => {
-    //   setIsLoading(true);
-    // }, 1000);
+    const timer = setTimeout(() => {
+      setIsLoading(true);
+    }, 1000);
 
-    // return () => clearTimeout(timer);
-    return setIsLoading(true)
+    return () => clearTimeout(timer);
+    // setIsLoading(true)
   }
   ), [])
 
@@ -22,7 +22,7 @@ function App() {
       {isLoading ?
         <div className='home__wrapper my-component'><Home /> </div>
         :
-        <div className="load"></div>
+        <div className="load"><div className='loading'></div></div>
       }
     </div>
   );
